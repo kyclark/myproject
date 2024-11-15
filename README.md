@@ -1,2 +1,3 @@
-# myproject
-Working with Nathan
+# Working with Nathan
+
+Hey, this is cool.
