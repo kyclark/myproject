@@ -11,6 +11,7 @@ from typing import NamedTuple
 
 class Args(NamedTuple):
     """ Command-line arguments """
+    greeting: str
     name: str
 
 
@@ -26,9 +27,13 @@ def get_args() -> Args:
                         metavar='NAME',
                         help='Your name')
 
+    parser.add_argument('-g',
+                        '--greeting',
+                        default='Hello')
+
     args = parser.parse_args()
 
-    return Args(args.name)
+    return Args(args.greeting, args.name)
 
 
 # --------------------------------------------------
@@ -36,7 +41,7 @@ def main() -> None:
     """ Make a jazz noise here """
 
     args = get_args()
-    print(f'Hello, {args.name}')
+    print(f'{args.greeting}, {args.name}')
 
 
 # --------------------------------------------------
